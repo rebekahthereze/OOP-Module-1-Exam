@@ -1,0 +1,38 @@
+//Laureano, Rebekah Thereze I.
+
+//Abstraction: the whole process is not being seen by the user.
+// Encapulation: data of the work start time and work end time is being
+// put into one class 
+class EmployeeSched{
+ 
+ void workStart(){
+   print('Your work starts at 8:00 AM.');
+ }
+  void workEnd(){
+    print('Your work ends at 4:00 PM.');
+  }
+}
+
+// Polymorphism: This class inherits the properties
+// of the parent class and changes the schedule set for the work end time.
+class PartTime extends EmployeeSched {
+  @override
+  void workEnd(){
+    print('Your work ends at 12:00 PM.');
+  }
+}
+
+// Inheritance: This class inherits the properties of the parent class
+class FullTime extends EmployeeSched {
+}
+
+void main() {
+  EmployeeSched ann = PartTime();
+  EmployeeSched may = FullTime();
+  print("Ann (Part-Time Worker):");
+  ann.workStart();
+  ann.workEnd();
+  print("May (Full-Time Worker):");
+  may.workStart();
+  may.workEnd();
+}
